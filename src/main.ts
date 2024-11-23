@@ -3,7 +3,6 @@ import { ExpressAdapter } from '@nestjs/platform-express';
 import { AppModule } from './app.module';
 import express from 'express';
 
-// Create express instance
 const expressApp = express();
 
 let app: any;
@@ -11,17 +10,16 @@ let app: any;
 async function bootstrap() {
   if (!app) {
     try {
-      // Create NestJS app with Express adapter
+      
       app = await NestFactory.create(
         AppModule,
         new ExpressAdapter(expressApp),
-        { logger: ['error', 'warn'] }  // Add logging for better debugging
+        { logger: ['error', 'warn'] }  
       );
 
-      // Enable CORS
+    
       app.enableCors();
 
-      // Initialize the application
       await app.init();
     } catch (error) {
       console.error('Bootstrap error:', error);
@@ -31,7 +29,7 @@ async function bootstrap() {
   return app;
 }
 
-// Vercel serverless function handler
+
 export default async function handler(req: any, res: any) {
   try {
     const app = await bootstrap();
