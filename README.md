@@ -20,6 +20,7 @@ Create a serverless API for managing user notification preferences and sending n
 
 
 ## API Explanation
+```
 src/
   ├─> modules/
   │     ├─> notifications/
@@ -51,20 +52,20 @@ src/
   ├─> app.service.ts
   ├─> app.module.ts
   └─> main.ts
-
+```
 
 ## **Modules**
 
 ### **Notifications Module**
 - **Components**:
-  - **Controller**: Defines endpoints like POST /notifications to send notifications.
+  - **Controller**: Defines endpoints like `POST /notifications` to send notifications.
   - **Service**: Defines  logic to process notifications and interact with database.
   - **DTO**: Validates incoming data.
   - **Schemas**: Defines database models.
 
 ### **Preferences Module**
 - **Components**:
-  - **Controller**: Handles endpoints like PUT /preferences for updating preferences.
+  - **Controller**: Handles endpoints like `PUT /preferences` for updating preferences.
   - **Service**: Defines logic for managing preferences.
   - **DTO**: Validates incoming data.
   - **Schemas**: Defines database models.
@@ -74,18 +75,18 @@ src/
 ## **Common**
 
 ### **Filters**
-- **Global Exception Handling**: global-exception.filter.ts
+- **Global Exception Handling**: `global-exception.filter.ts`
 
 ### **Guards**
-- **api-key.guard.ts**: API key authentication.
-- **throttler.guard.ts**: Rate limiting.
+- **`api-key.guard.ts`**: API key authentication.
+- **`throttler.guard.ts`**: Rate limiting.
 
 ### **Interceptors**
-- **Logging**: Logs requests (logging.interceptor.ts).
+- **Logging**: Logs requests (`logging.interceptor.ts`).
 
 ---
 
-### **main.ts**
+### **`main.ts`**
 - Initializes the application, sets up filters, guards, and starts the server.
 
 ---
@@ -113,36 +114,36 @@ src/
 
 Clone/download the repo to your local machine.
 
-bash
+```bash
 git clone https://github.com/your-repository/user-notification-preferences-api.git
 cd user-notification-preferences-api
-
+```
 
 ### Step 2: Install Dependencies
 
 Run this in terminal:
 
-bash
+```bash
 npm install
-
+```
 
 ### Step 3: Environment Variables
 
-Create a .env file in the root directory with the following variables:
+Create a `.env` file in the root directory with the following variables:
 
-bash
+```bash
 MONGO_URI=<secret_mongo_uri>
 API_KEY=<secret_api_key>
 PORT=3000
-
+```
 
 ### Step 4: Running the Application
 
 The API will run on http://localhost:3000.
 
-bash
+```bash
 npm run start:dev
-
+```
 
 ## Deployment Configuration
 
@@ -151,7 +152,7 @@ Remember to install all the dependencies first (npm install).
 
 ### 1. Vercel Configuration (vercel.json)
 
-json
+```json
 {
   "version": 2,
   "builds": [
@@ -174,19 +175,19 @@ json
     }
   ]
 }
-
+```
 
 ### 2. Serverless Handler Setup (main.ts)
 
 This file contains the Vercel serverless function handler.
 You can look at complete code of main.ts from the repo.
 
-typescript
+```typescript
 import { VercelRequest, VercelResponse } from '@vercel/node';
 export default (req: VercelRequest, res: VercelResponse) => {
   res.status(200).send('User Notification Preferences API');
 };
-
+```
 
 ### 3. Deploying to Vercel
 
@@ -195,7 +196,7 @@ After the deployment is successful, you can access API via URL.
 
 ## Tests
 
-Test files (.spec files) are placed within respective module folders, making it easier to maintain, navigate, and test.
+Test files (`.spec` files) are placed within respective module folders, making it easier to maintain, navigate, and test.
 
 ### Performed Tests
 
@@ -203,16 +204,16 @@ Test files (.spec files) are placed within respective module folders, making it 
 
 To run unit tests, use the following command:
 
-bash
+```bash
 npm run test:cov:unit
-
+```
 
 ### Details
 
 #### Files Tested
 
-* notifications.service.ts (test file: notifications.service.unit.spec.ts)
-* preferences.service.ts (test file: preferences.service.unit.spec.ts)
+* `notifications.service.ts` (test file: `notifications.service.unit.spec.ts`)
+* `preferences.service.ts` (test file: `preferences.service.unit.spec.ts`)
 
   
 <table>
@@ -260,7 +261,7 @@ npm run test:cov:unit
 
 #### User Preferences Validation
 
-* Empty/invalid userId validation
+* Empty/invalid `userId` validation
 * Email format validation
 * Preference structure validation
 * Notification channel validation
@@ -275,7 +276,7 @@ npm run test:cov:unit
 
 ### Error Handling Testing
 
-Used NotFoundException, BadRequestException, and ConflictException for the following:
+Used `NotFoundException`, `BadRequestException`, and `ConflictException` for the following:
 
 * Missing user preferences
 * Invalid notification content
@@ -290,9 +291,9 @@ Used NotFoundException, BadRequestException, and ConflictException for the follo
 ### 2. Integration Testing
 
 To run unit tests, use the following command:
-bash
+```bash
 npm run test:cov:integration
-
+```
 
 ### Details
 
