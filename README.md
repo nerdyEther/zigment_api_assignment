@@ -363,6 +363,8 @@ This test validates complete integration of following components:
 
 ## API Documentation
 
-[Add API endpoint documentation here]
+[API Documentation](https://docs.google.com/document/d/1Hs99-BUMhE-FcqlX4I2enQbNVxWhsyEycOeLC0p_Ycw/edit?usp=sharing)
+
+## Postman Collection
 
 
