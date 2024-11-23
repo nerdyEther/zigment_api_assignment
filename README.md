@@ -173,3 +173,6 @@ Used `NotFoundException`, `BadRequestException`, and `ConflictException` for the
 * Handling multiple simultaneous conditions
 * Complex preferences
 * Complex log and stats retrieval
+<img width="1272" alt="Screenshot 2024-11-23 at 10 24 19 AM" src="https://github.com/user-attachments/assets/51350886-9fee-45e5-b5b7-ae883a1f8c1e">
+
+
