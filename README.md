@@ -325,8 +325,8 @@ This test validates complete integration of following components:
 * Rate limiting testing
 
 ### Results
-* Achieved 95% coverage in both files
-* All test cases passed successfully for preferences.controllers.ts
+* Achieved 95% coverage in preferences.controller.ts.
+* All test cases passed successfully for preferences.controllers.ts.
 
 ### Test Overview:
 
