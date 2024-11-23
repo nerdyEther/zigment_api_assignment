@@ -17,9 +17,9 @@ Create a serverless API for managing user notification preferences and sending n
 
 
 
-# LOGIC
 
-## Project Structure
+
+## API Explanation
 ```
 src/
   ├─> modules/
@@ -54,6 +54,55 @@ src/
   └─> main.ts
 ```
 
+## **Modules**
+
+### **Notifications Module**
+- **Components**:
+  - **Controller**: Defines endpoints like `POST /notifications` to send notifications.
+  - **Service**: Defines  logic to process notifications and interact with database.
+  - **DTO**: Validates incoming data.
+  - **Schemas**: Defines database models.
+
+### **Preferences Module**
+- **Components**:
+  - **Controller**: Handles endpoints like `PUT /preferences` for updating preferences.
+  - **Service**: Defines logic for managing preferences.
+  - **DTO**: Validates incoming data.
+  - **Schemas**: Defines database models.
+
+---
+
+## **Common**
+
+### **Filters**
+- **Global Exception Handling**: `global-exception.filter.ts`
+
+### **Guards**
+- **`api-key.guard.ts`**: API key authentication.
+- **`throttler.guard.ts`**: Rate limiting.
+
+### **Interceptors**
+- **Logging**: Logs requests (`logging.interceptor.ts`).
+
+---
+
+### **`main.ts`**
+- Initializes the application, sets up filters, guards, and starts the server.
+
+---
+
+## **Flow of a Request**
+
+1. **Controller**:
+   - Receives and validates requests.
+2. **Service**:
+   - Handles  logic and interacts with the database.
+3. **Database**:
+   - Stores or retrieves data (defined via schemas).
+4. **Response**:
+   - Returns success/error based on processing.
+
+---
 
 
 
