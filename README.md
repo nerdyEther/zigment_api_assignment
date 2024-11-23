@@ -15,6 +15,50 @@ Create a serverless API for managing user notification preferences and sending n
 - **npm**
 - **MongoDB**: Ensure a running MongoDB instance
 
+
+
+# LOGIC
+
+## Project Structure
+```
+src/
+  ├─> modules/
+  │     ├─> notifications/
+  │     │     ├─> notifications.controller.ts
+  │     │     ├─> notifications.service.ts
+  │     │     ├─> notifications.spec.ts
+  │     │     ├─> notifications.integration.spec.ts
+  │     │     ├─> dto/
+  │     │     └─> schemas/
+  │     │
+  │     └─> preferences/
+  │           ├─> preferences.controller.ts
+  │           ├─> preferences.service.ts
+  │           ├─> preferences.spec.ts
+  │           ├─> preferences.integration.spec.ts
+  │           ├─> dto/
+  │           └─> schemas/
+  │
+  ├─> common/
+  │     ├─> filters/
+  │     │     └─> global-exception.filter.ts
+  │     ├─> guards/
+  │     │     ├─> api-key.guard.ts
+  │     │     └─> throttler.guard.ts
+  │     └─> interceptors/
+  │           └─> logging.interceptor.ts
+  │
+  ├─> app.controller.ts
+  ├─> app.service.ts
+  ├─> app.module.ts
+  └─> main.ts
+```
+
+
+
+
+
+
 ## Setup Instructions
 
 ### Step 1: Clone the Repository
@@ -267,5 +311,9 @@ This test validates complete integration of following components:
 * Implements proper test cleanup after each case
 * Handles async operations with delays to prevent race conditions
 
+
+## API Documentation
+
+[Add API endpoint documentation here]
 
 
