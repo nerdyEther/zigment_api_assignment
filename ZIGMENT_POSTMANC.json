@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "6ac606b0-8ee0-4f6c-acbc-378b5e21fce3",
+		"name": "Zigment_api-",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38315460"
+	},
+	"item": [
+		{
+			"name": "Add user preference",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "qwerty",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": \"user126\",\n  \"email\": \"user@example.com\",\n  \"preferences\": {\n    \"marketing\": true,\n    \"newsletter\": true,\n    \"updates\": true,\n    \"frequency\": \"daily\",\n    \"channels\": {\n      \"email\": true,\n      \"sms\": true,\n      \"push\": false\n    }\n  },\n  \"timezone\": \"Europe/London\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://zigment-api-assignment.vercel.app/api/preferences",
+					"protocol": "https",
+					"host": [
+						"zigment-api-assignment",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"preferences"
+					]
+				},
+				"description": "**Creates new user preference profile.**"
+			},
+			"response": []
+		},
+		{
+			"name": "Get user preferences",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "qwerty",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://zigment-api-assignment.vercel.app/api/preferences/user126",
+					"protocol": "https",
+					"host": [
+						"zigment-api-assignment",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"preferences",
+						"user126"
+					]
+				},
+				"description": "Gets user preferences of a specific user."
+			},
+			"response": []
+		},
+		{
+			"name": "update user preferences",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "qwerty",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"user@example.com\",\n  \"preferences\": {\n    \"marketing\": true,\n    \"newsletter\": true,\n    \"updates\": true,\n    \"frequency\": \"daily\",\n    \"channels\": {\n      \"email\": true,\n      \"sms\": true,\n      \"push\": false\n    }\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://zigment-api-assignment.vercel.app/api/preferences/user126",
+					"protocol": "https",
+					"host": [
+						"zigment-api-assignment",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"preferences",
+						"user126"
+					]
+				},
+				"description": "**Updates preferences for a existing user.**"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User preferences",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "qwerty",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://zigment-api-assignment.vercel.app/api/preferences/user126",
+					"protocol": "https",
+					"host": [
+						"zigment-api-assignment",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"preferences",
+						"user126"
+					]
+				},
+				"description": "Remove user's preferences"
+			},
+			"response": []
+		},
+		{
+			"name": "Send notification",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-API-KEY",
+						"value": "qwerty",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": \"user126\",\n  \"type\": \"newsletter\",\n  \"channel\": \"email\",\n  \"content\": {\n    \"subject\": \"Weekly Newsletter - Tech Updates\",\n    \"body\": \"Here are this week's top tech stories and updates...\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://zigment-api-assignment.vercel.app/api/notifications/send",
+					"protocol": "https",
+					"host": [
+						"zigment-api-assignment",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"notifications",
+						"send"
+					]
+				},
+				"description": "send a user notification"
+			},
+			"response": []
+		},
+		{
+			"name": "get notification logs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "qwerty",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://zigment-api-assignment.vercel.app/api/notifications/user126/logs",
+					"protocol": "https",
+					"host": [
+						"zigment-api-assignment",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"notifications",
+						"user126",
+						"logs"
+					]
+				},
+				"description": "get history of a user"
+			},
+			"response": []
+		},
+		{
+			"name": "Notification stats",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "qwerty",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://zigment-api-assignment.vercel.app/api/notifications/stats",
+					"protocol": "https",
+					"host": [
+						"zigment-api-assignment",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"notifications",
+						"stats"
+					]
+				},
+				"description": "get system-wide notification stats"
+			},
+			"response": []
+		}
+	]
+}
