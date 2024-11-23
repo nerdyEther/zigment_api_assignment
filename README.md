@@ -212,9 +212,18 @@ This test validates complete integration of following components:
 * Guards: API key authentication
 * Filters: Exception handling
 * Interceptors: Request/Response transformation
-<img width="1260" alt="Screenshot 2024-11-23 at 10 51 31 AM" src="https://github.com/user-attachments/assets/87581a95-699c-44ea-8a5b-207eeb8fd1c9">
 
-<img width="1268" alt="Screenshot 2024-11-23 at 10 51 09 AM" src="https://github.com/user-attachments/assets/844f0852-d5cf-4791-8e63-34b0dcc53512">
+  
+<table>
+  <tr>
+    <td>
+      <img width="1260" alt="Screenshot 2024-11-23 at 10 51 31 AM" src="https://github.com/user-attachments/assets/87581a95-699c-44ea-8a5b-207eeb8fd1c9">
+    </td>
+    <td>
+      <img width="1268" alt="Screenshot 2024-11-23 at 10 51 09 AM" src="https://github.com/user-attachments/assets/844f0852-d5cf-4791-8e63-34b0dcc53512">
+    </td>
+  </tr>
+</table>
 
 
 ### Key Focus:
