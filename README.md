@@ -195,5 +195,64 @@ Used `NotFoundException`, `BadRequestException`, and `ConflictException` for the
 * Complex preferences
 * Complex log and stats retrieval
 
+### 2. Integration Testing
+
+To run unit tests, use the following command:
+```bash
+npm run test:cov:integration
+```
+
+### Details
+
+This test validates complete integration of following components:
+* Controllers: PreferencesController
+* Services: PreferencesService
+* DTOs: for preference validation
+* Schemas: for preference data modeling
+* Guards: API key authentication
+* Filters: Exception handling
+* Interceptors: Request/Response transformation
+
+### Key Focus:
+* API endpoint testing
+* Database operations testing
+* Rate limiting testing
+
+### Results
+* Achieved 95% coverage in both files
+* All test cases passed successfully for preferences.controllers.ts
+
+### Test Overview:
+
+#### API Endpoint Testing
+##### CRUD operations:
+* POST /api/preferences
+    * Successfully creates new user preferences
+    * Validates API key authentication
+    * Handles invalid information
+* GET /api/preferences/:userId
+    * Reads existing user preferences
+    * Handles non-existent users (404 responses)
+* DELETE /api/preferences/:userId
+    * Successfully deletes user preferences
+    * Handles non-existent users (404 responses)
+
+#### Database Operations Testing
+##### Create Operations
+* Verifies data is correctly stored in the database
+* Verifies stored data matches input
+* Verifies database queries work as expected
+* Verifies records are properly removed from the database
+
+#### Rate Limiting Testing
+* Verifies the implementation of rate limits after multiple requests
+* Verifies 429 (Too Many Requests) response when limits are exceeded
+
+#### Edge Cases
+* Tests missing required fields
+* Handles invalid input
+* Implements proper test cleanup after each case
+* Handles async operations with delays to prevent race conditions
+
 
 
