@@ -1,43 +1,18 @@
-# User Notification Preferences API
+# User Notification Preferences API Challenge
 
-This API enables the management of user notification preferences, sending notifications, and related services. Built with NestJS, it adheres to RESTful principles and includes features like unit testing, integration testing, and reporting.
+Create a serverless API for managing user notification preferences and sending notifications. The system should handle user preferences for different notification types and manage notification delivery settings.
 
-## Table of Contents
-- [Features](#features)
-- [Technologies](#technologies)
-- [Prerequisites](#prerequisites)
-- [Setup Instructions](#setup-instructions)
-- [Running the Application](#running-the-application)
-  - [Development Mode](#development-mode)
-  - [Production Mode](#production-mode)
-- [Testing](#testing)
-  - [Unit Tests](#unit-tests)
-  - [Integration Tests](#integration-tests)
-  - [Test Coverage](#test-coverage)
-- [Deployment](#deployment)
-  - [Using Docker](#using-docker)
-  - [Deploying to a Cloud Service](#deploying-to-a-cloud-service)
-- [Directory Structure](#directory-structure)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Features
-- User registration and authentication
-- Notification preferences management
-- Sending notifications via various channels (e.g., email, SMS)
-- Unit and integration testing with Jest
-- Coverage and reporting tools (HTML and JUnit)
 
 ## Technologies
 - Framework: NestJS
 - Database: MongoDB
 - Language: TypeScript
-- Testing: Jest, ts-jest
-- Build Tool: TypeScript Compiler
+- Testing: Jest
+
 
 ## Prerequisites
-- **Node.js**: v16 or higher
-- **npm**: v8 or higher
+- **Node.js**
+- **npm**
 - **MongoDB**: Ensure a running MongoDB instance
 
 ### Environment Variables:
