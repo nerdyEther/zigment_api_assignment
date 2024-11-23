@@ -367,4 +367,5 @@ This test validates complete integration of following components:
 
 ## Postman Collection
 
+[Download Postman Collection](./ZIGMENT_POSTMANC.json)
 
