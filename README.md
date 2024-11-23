@@ -119,7 +119,15 @@ git clone https://github.com/your-repository/user-notification-preferences-api.g
 cd user-notification-preferences-api
 ```
 
-### Step 2: Install Dependencies
+### Step 2: Change import statement for express in main.ts
+
+replace " import express from 'express'; " with:
+
+```bash
+import * as express from 'express';
+```
+
+### Step 3: Install Dependencies
 
 Run this in terminal:
 
@@ -127,7 +135,7 @@ Run this in terminal:
 npm install
 ```
 
-### Step 3: Environment Variables
+### Step 4: Environment Variables
 
 Create a `.env` file in the root directory with the following variables:
 
@@ -137,7 +145,7 @@ API_KEY=<secret_api_key>
 PORT=3000
 ```
 
-### Step 4: Running the Application
+### Step 5: Running the Application
 
 The API will run on http://localhost:3000.
 
@@ -188,8 +196,14 @@ export default (req: VercelRequest, res: VercelResponse) => {
   res.status(200).send('User Notification Preferences API');
 };
 ```
+### 3. Change express import statement (main.ts)
 
-### 3. Deploying to Vercel
+replace " import * as express from 'express';" with:
+
+```bash
+import express from 'express';
+```
+### 4. Deploying to Vercel
 
 You can either use CLI or can directly deploy via webpage, remember to setup ENVIRONMENT VARIABLES.
 After the deployment is successful, you can access API via URL.
