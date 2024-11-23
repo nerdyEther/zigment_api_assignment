@@ -55,7 +55,7 @@ export class UserPreference extends Document {
   @Prop({ required: true, unique: true, index: true })
   userId: string;
 
-  @Prop({ required: true })
+  @Prop({ required: true , unique:true})
   @IsEmail()
   email: string;
 

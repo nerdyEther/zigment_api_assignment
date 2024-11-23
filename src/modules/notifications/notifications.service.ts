@@ -111,18 +111,29 @@ export class NotificationsService {
   ): Promise<NotificationLog[]> {
     const query: any = { userId };
 
+    const userPreference = await this.userPreferenceModel.findOne({ userId });
+    if (!userPreference) {
+      throw new NotFoundException(`User with ID ${userId} not found`);
+    }
+
     if (filters) {
       if (filters.type) query.type = filters.type;
       if (filters.channel) query.channel = filters.channel;
       if (filters.status) query.status = filters.status;
     }
 
-    return this.notificationLogModel
-      .find(query)
-      .sort({ sentAt: -1 }) // sort by most recent first
-      .limit(100); // limit to prevent overwhelming response
+    const notificationLogs = await this.notificationLogModel
+    .find(query)
+    .sort({ sentAt: -1 }) // sort by most recent first
+    .limit(100); // limit to prevent over response
+
+  //  no notification , throw NotFoundException
+  if (notificationLogs.length === 0) {
+    throw new NotFoundException('No notifications found for the given user');
   }
 
+  return notificationLogs;
+}
   async getNotificationStats(userId: string): Promise<any> {
     const totalNotifications = await this.notificationLogModel.countDocuments({
       userId,

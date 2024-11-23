@@ -79,13 +79,22 @@ export class PreferencesService {
       this.validateEmail(createPreferenceDto.email);
       this.validatePreferences(createPreferenceDto.preferences);
 
-      // C if user preference already exists
+      // C if user ID preference already exists
       const existingPreference = await this.userPreferenceModel.findOne({
         userId: createPreferenceDto.userId,
       });
 
       if (existingPreference) {
         throw new ConflictException('User preferences already exist');
+      }
+
+      //if email already exist
+      const existingPreferenceByEmail = await this.userPreferenceModel.findOne({
+        email: createPreferenceDto.email,
+      });
+  
+      if (existingPreferenceByEmail) {
+        throw new ConflictException('Email is already used with a user preference');
       }
 
       // create and  return new preference
