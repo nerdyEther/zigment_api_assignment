@@ -123,10 +123,14 @@ npm run test:cov:unit
 * `preferences.service.ts` (test file: `preferences.service.unit.spec.ts`)
 
   
-<img width="1247" alt="Screenshot 2024-11-23 at 10 22 10 AM" src="https://github.com/user-attachments/assets/07744986-f183-4c14-9d40-0d21f326d06d">
-<img width="1126" alt="Screenshot 2024-11-23 at 10 22 49 AM" src="https://github.com/user-attachments/assets/55a1b7dd-62ac-4957-bc76-4af63907eef4">
-<img width="1272" alt="Screenshot 2024-11-23 at 10 24 19 AM" src="https://github.com/user-attachments/assets/5a46d18d-2ca8-44b2-9218-da9c018f398e">
-<img width="1263" alt="Screenshot 2024-11-23 at 10 31 56 AM" src="https://github.com/user-attachments/assets/4fea77e8-1361-47bc-b9cb-41ddfbbeb0bb">
+<p align="center">
+  <img width="600" alt="Screenshot 2024-11-23 at 10 22 10 AM" src="https://github.com/user-attachments/assets/07744986-f183-4c14-9d40-0d21f326d06d">
+  <img width="600" alt="Screenshot 2024-11-23 at 10 22 49 AM" src="https://github.com/user-attachments/assets/55a1b7dd-62ac-4957-bc76-4af63907eef4">
+</p>
+<p align="center">
+  <img width="600" alt="Screenshot 2024-11-23 at 10 24 19 AM" src="https://github.com/user-attachments/assets/5a46d18d-2ca8-44b2-9218-da9c018f398e">
+  <img width="600" alt="Screenshot 2024-11-23 at 10 31 56 AM" src="https://github.com/user-attachments/assets/4fea77e8-1361-47bc-b9cb-41ddfbbeb0bb">
+</p>
 
 
 #### Key Focus
