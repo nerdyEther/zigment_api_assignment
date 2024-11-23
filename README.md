@@ -1,5 +1,7 @@
 
 
+---
+
 # User Notification Preferences API Challenge
 
 Create a serverless API for managing user notification preferences and sending notifications. The system should handle user preferences for different notification types and manage notification delivery settings.
@@ -8,114 +10,137 @@ Create a serverless API for managing user notification preferences and sending n
 
 ## **Technologies**
 
-- **Framework**: NestJS  
-- **Database**: MongoDB  
-- **Language**: TypeScript  
-- **Testing**: Jest  
+- Framework: NestJS  
+- Database: MongoDB  
+- Language: TypeScript  
+- Testing: Jest  
 
 ---
 
 ## **Prerequisites**
 
-To run this project, ensure you have the following:
-
 - **Node.js**  
 - **npm**  
-- **MongoDB**: A running MongoDB instance  
+- **MongoDB**: Ensure a running MongoDB instance  
 
 ---
 
 ## **API Explanation**
 
-The directory structure for the project is as follows:
-
 ```plaintext
 src/
-  ├─ modules/
-  │     ├─ notifications/
-  │     │     ├─ notifications.controller.ts
-  │     │     ├─ notifications.service.ts
-  │     │     ├─ notifications.spec.ts
-  │     │     ├─ notifications.integration.spec.ts
-  │     │     ├─ dto/
-  │     │     └─ schemas/
-  │     └─ preferences/
-  │           ├─ preferences.controller.ts
-  │           ├─ preferences.service.ts
-  │           ├─ preferences.spec.ts
-  │           ├─ preferences.integration.spec.ts
-  │           ├─ dto/
-  │           └─ schemas/
+  ├─> modules/
+  │     ├─> notifications/
+  │     │     ├─> notifications.controller.ts
+  │     │     ├─> notifications.service.ts
+  │     │     ├─> notifications.spec.ts
+  │     │     ├─> notifications.integration.spec.ts
+  │     │     ├─> dto/
+  │     │     └─> schemas/
+  │     │
+  │     └─> preferences/
+  │           ├─> preferences.controller.ts
+  │           ├─> preferences.service.ts
+  │           ├─> preferences.spec.ts
+  │           ├─> preferences.integration.spec.ts
+  │           ├─> dto/
+  │           └─> schemas/
   │
-  ├─ common/
-  │     ├─ filters/
-  │     │     └─ global-exception.filter.ts
-  │     ├─ guards/
-  │     │     ├─ api-key.guard.ts
-  │     │     └─ throttler.guard.ts
-  │     └─ interceptors/
-  │           └─ logging.interceptor.ts
+  ├─> common/
+  │     ├─> filters/
+  │     │     └─> global-exception.filter.ts
+  │     ├─> guards/
+  │     │     ├─> api-key.guard.ts
+  │     │     └─> throttler.guard.ts
+  │     └─> interceptors/
+  │           └─> logging.interceptor.ts
   │
-  ├─ app.controller.ts
-  ├─ app.service.ts
-  ├─ app.module.ts
-  └─ main.ts
+  ├─> app.controller.ts
+  ├─> app.service.ts
+  ├─> app.module.ts
+  └─> main.ts
 ```
 
-### **Modules**
+---
 
-#### **Notifications Module**
-- **Controller**: Defines endpoints like `POST /notifications` to send notifications.  
-- **Service**: Handles business logic for processing notifications and interacting with the database.  
-- **DTO**: Validates incoming data.  
-- **Schemas**: Defines database models.  
+## **Modules**
 
-#### **Preferences Module**
-- **Controller**: Handles endpoints like `PUT /preferences` for updating preferences.  
-- **Service**: Implements logic for managing preferences.  
-- **DTO**: Validates incoming data.  
-- **Schemas**: Defines database models.  
+### **Notifications Module**
 
-### **Common**
+- **Components**:  
+  - **Controller**: Defines endpoints like `POST /notifications` to send notifications.  
+  - **Service**: Defines logic to process notifications and interact with the database.  
+  - **DTO**: Validates incoming data.  
+  - **Schemas**: Defines database models.  
 
-#### **Filters**
-- **Global Exception Handling**: Implements centralized error handling (`global-exception.filter.ts`).  
+### **Preferences Module**
 
-#### **Guards**
-- **`api-key.guard.ts`**: API key-based authentication.  
-- **`throttler.guard.ts`**: Rate limiting for requests.  
+- **Components**:  
+  - **Controller**: Handles endpoints like `PUT /preferences` for updating preferences.  
+  - **Service**: Defines logic for managing preferences.  
+  - **DTO**: Validates incoming data.  
+  - **Schemas**: Defines database models.  
 
-#### **Interceptors**
-- **Logging**: Logs request and response data (`logging.interceptor.ts`).  
+---
 
-### **Flow of a Request**
+## **Common**
 
-1. **Controller**: Receives and validates requests.  
-2. **Service**: Processes logic and interacts with the database.  
-3. **Database**: Stores or retrieves data (schemas define structure).  
-4. **Response**: Returns a success/error response based on the process.  
+### **Filters**
+
+- **Global Exception Handling**: `global-exception.filter.ts`
+
+### **Guards**
+
+- **`api-key.guard.ts`**: API key authentication.  
+- **`throttler.guard.ts`**: Rate limiting.  
+
+### **Interceptors**
+
+- **Logging**: Logs requests (`logging.interceptor.ts`).  
+
+---
+
+### **`main.ts`**
+
+- Initializes the application, sets up filters, guards, and starts the server.
+
+---
+
+## **Flow of a Request**
+
+1. **Controller**:
+   - Receives and validates requests.  
+2. **Service**:
+   - Handles logic and interacts with the database.  
+3. **Database**:
+   - Stores or retrieves data (defined via schemas).  
+4. **Response**:
+   - Returns success/error based on processing.  
 
 ---
 
 ## **Setup Instructions**
 
-### **Step 1: Clone the Repository**
-Clone or download the repository to your local machine.
+### Step 1: Clone the Repository
+
+Clone/download the repo to your local machine.
 
 ```bash
 git clone https://github.com/your-repository/user-notification-preferences-api.git
 cd user-notification-preferences-api
 ```
 
-### **Step 2: Install Dependencies**
-Run the following command in your terminal:
+### Step 2: Install Dependencies
+
+Run this in the terminal:
 
 ```bash
 npm install
 ```
 
-### **Step 3: Configure Environment Variables**
-Create a `.env` file in the root directory with these variables:
+### Step 3: Environment Variables
+
+Create a `.env` file in the root directory with the following variables:
 
 ```plaintext
 MONGO_URI=<secret_mongo_uri>
@@ -123,8 +148,9 @@ API_KEY=<secret_api_key>
 PORT=3000
 ```
 
-### **Step 4: Run the Application**
-Start the application in development mode. The API will run at `http://localhost:3000`.
+### Step 4: Running the Application
+
+The API will run on `http://localhost:3000`.
 
 ```bash
 npm run start:dev
@@ -134,9 +160,7 @@ npm run start:dev
 
 ## **Deployment Configuration**
 
-The API is deployed using **Vercel's serverless functions**.
-
-### **Vercel Configuration (vercel.json)**
+### 1. Vercel Configuration (vercel.json)
 
 ```json
 {
@@ -151,73 +175,74 @@ The API is deployed using **Vercel's serverless functions**.
     {
       "src": "/(.*)",
       "dest": "src/main.ts",
-      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH"]
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE",
+        "PATCH"
+      ]
     }
   ]
 }
 ```
 
-### **Serverless Handler Setup**
-The `main.ts` file defines the serverless function handler.
+### 2. Serverless Handler Setup (main.ts)
 
 ```typescript
 import { VercelRequest, VercelResponse } from '@vercel/node';
-
 export default (req: VercelRequest, res: VercelResponse) => {
   res.status(200).send('User Notification Preferences API');
 };
 ```
 
-### **Deployment Steps**
-1. Install all dependencies: `npm install`.  
-2. Deploy to Vercel using CLI or the web dashboard.  
-3. Configure environment variables in Vercel.  
+### 3. Deploying to Vercel
+
+You can either use CLI or directly deploy via the webpage. Remember to set up **Environment Variables**.  
 
 ---
 
 ## **Tests**
 
-### **Unit Testing**
+### Performed Tests
 
-Run unit tests with the following command:
+#### 1. Unit Testing
 
 ```bash
 npm run test:cov:unit
 ```
 
-- **Focus**:  
-  - Logic validation  
-  - Error handling  
-  - Validation checks  
+### Test Details and Images
 
-### **Integration Testing**
-
-Run integration tests with the following command:
-
-```bash
-npm run test:cov:integration
-```
-
-- **Focus**:  
-  - End-to-end flow validation  
-  - Database operations  
-  - Guards, filters, and interceptors  
-
-### **Results**
-- Achieved **95-100% test coverage** across modules.  
-- All test cases passed successfully.  
+<table>
+  <tr>
+    <td>
+      <img width="600" alt="Screenshot 2024-11-23 at 10 22 10 AM" src="https://github.com/user-attachments/assets/07744986-f183-4c14-9d40-0d21f326d06d">
+    </td>
+    <td>
+      <img width="600" alt="Screenshot 2024-11-23 at 10 22 49 AM" src="https://github.com/user-attachments/assets/55a1b7dd-62ac-4957-bc76-4af63907eef4">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img width="600" alt="Screenshot 2024-11-23 at 10 24 19 AM" src="https://github.com/user-attachments/assets/5a46d18d-2ca8-44b2-9218-da9c018f398e">
+    </td>
+    <td>
+      <img width="600" alt="Screenshot 2024-11-23 at 10 31 56 AM" src="https://github.com/user-attachments/assets/4fea77e8-1361-47bc-b9cb-41ddfbbeb0bb">
+    </td>
+  </tr>
+</table>
 
 ---
 
 ## **API Documentation**
 
-The full API documentation is available [here](https://docs.google.com/document/d/1Hs99-BUMhE-FcqlX4I2enQbNVxWhsyEycOeLC0p_Ycw/edit?usp=sharing).  
+[API Documentation](https://docs.google.com/document/d/1Hs99-BUMhE-FcqlX4I2enQbNVxWhsyEycOeLC0p_Ycw/edit?usp=sharing)
 
 ---
 
 ## **Postman Collection**
 
-Download the Postman collection for testing the API: [Postman Collection](./ZIGMENT_POSTMANC.json).  
+[Download Postman Collection](./ZIGMENT_POSTMANC.json)
 
 ---
-
